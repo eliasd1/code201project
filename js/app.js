@@ -19,6 +19,7 @@ document.write(`<p id = "score">Score: ${count}/7</p>`)
 function guessAboutMeGame(){
     for (let i = 0; i<aboutMeQuestions.length; i++){
         response = prompt(aboutMeQuestions[i])
+        response = response.toLowerCase();
         response = (response === "y" || response === "yes")? "yes" : "no";
         if(response === answersAboutMe[i]){
             console.log("Correct")
@@ -52,6 +53,7 @@ function guessNumber(){
 function seventhQuestion(){
     guesses = 0;
     response = prompt("What is one of my favorite games?")
+    response = response.toLowerCase();
     var wrongResponse = true;
     while(guesses < 6 && wrongResponse){
         guesses++;
