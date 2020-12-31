@@ -22,8 +22,14 @@ function guessAboutMeGame(){
     for (let i = 0; i<aboutMeQuestions.length; i++){
         response = prompt(aboutMeQuestions[i])
         response = response.toLowerCase();
+<<<<<<< HEAD
         if(answersAboutMe[i].indexOf(response) > -1){
             // console.log("Correct")
+=======
+        response = (response === "y" || response === "yes")? "yes" : "no";
+        if(response === answersAboutMe[i]){
+            console.log("Correct")
+>>>>>>> f116d3d4304d7ad163905178994aec050968dbd2
             alert("Correct")
             count++;
         } else{
@@ -53,6 +59,7 @@ function guessNumber(){
     }
 }
 function seventhQuestion(){
+<<<<<<< HEAD
     for(let i = 0; i< 6; i++){
         response = prompt("What is one of my favorite games?")
         response = response.toLowerCase()
@@ -60,11 +67,95 @@ function seventhQuestion(){
             // console.log("Correct")
             alert("Correct")
             count++;
+=======
+    guesses = 0;
+    response = prompt("What is one of my favorite games?")
+    response = response.toLowerCase();
+    var wrongResponse = true;
+    while(guesses < 6 && wrongResponse){
+        guesses++;
+        for(let i = 0; i<answers.length; i++){
+            if(response === answers[i]){
+                console.log("Correct")
+                alert("Correct. All of these answers are correct: " + joinAnswers())
+                count++;
+                wrongResponse = false;
+            }
+        }
+        if(!wrongResponse){
+>>>>>>> f116d3d4304d7ad163905178994aec050968dbd2
             break;
         } else if (i < 5){
             // console.log("Wrong")
             alert("Wrong. Number of attempts left: " + (5-i))
         } 
     }
+<<<<<<< HEAD
     alert("All of these are correct answers: " + answers.join(", "))
 }
+=======
+    
+}
+// function seventhQuestion(){
+//     guesses = 0;
+//     response = prompt("What is one of my favorite games?")
+//     var wrongResponse = true;
+//     while(guesses < 6 && wrongResponse){
+//         guesses++;
+//         for(let i = 0; i<answers.length; i++){
+//             if(response === answers[i]){
+//                 console.log("Correct")
+//                 alert("Correct. All of these answers are correct: " + joinAnswers())
+//                 count++;
+//                 wrongResponse = false;
+//             }
+//         }
+//         if(!wrongResponse){
+//             break;
+//         }
+//         if(guesses < 6){
+//             console.log("Wrong. Number of attempts left: " + (6 - guesses))
+//             alert("Wrong. Number of attempts left: " + (6 - guesses))
+//             response = prompt("What is one of my favorite games?")
+//         } else{
+//             alert("You ran out of attempts. Correct answers: " + joinAnswers())
+//         }
+//     }
+// }
+// function checkResponseYes(response){
+//     response = response.toLowerCase();
+//     if(response === "y" || response === "yes"){
+//         // console.log("Correct")
+//         alert("Correct")
+//         count++;
+//     } else if(response === "n" || response === "no"){
+//         // console.log("Wrong")
+//         alert("Wrong")
+//     } else{
+//         // console.log("Not a valid input")
+//         alert("Not a valid input")
+//     }
+// }
+// function checkResponseNo(response){
+//     response = response.toLowerCase();
+//     if(response === "y" || response === "yes"){
+//         // console.log("Wrong")
+//         alert("Wrong")
+//     } else if(response === "n" || response === "no"){
+//         // console.log("Correct")
+//         alert("Correct")
+//         count++;
+//     } else{
+//         // console.log("Not a valid input")
+//         alert("Not a valid input")
+//     }
+// }
+// function joinAnswers(){
+//     var str = "";
+//     for(let i = 0; i<answers.length -1; i++){
+//         str+= answers[i] + ", "
+//     }
+//     str += answers[answers.length-1]
+//     return str;
+// }
+>>>>>>> f116d3d4304d7ad163905178994aec050968dbd2

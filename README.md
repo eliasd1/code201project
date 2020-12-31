@@ -27,3 +27,12 @@ I added the following things:
 
 Link
 - [My website](index.html)
+
+# Lab -04
+## About Me Pair Programming
+
+    - add lowercase funtions to string inputs.
+    - made questions into arrays.
+    - driver name : AbdallahYousef
+    - navigator name : Elias Dadoush 
+
