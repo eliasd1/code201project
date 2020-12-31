@@ -18,55 +18,54 @@ console.log("Welcome to my website, " + userName)
 alert(`Welcome to my website, ${userName}. Your score: ${count}/7`)
 document.write(`<p id = "score">Score: ${count}/7</p>`)
 
-function guessAboutMeGame(){
-    for (let i = 0; i<aboutMeQuestions.length; i++){
+function guessAboutMeGame() {
+    for (let i = 0; i < aboutMeQuestions.length; i++) {
         response = prompt(aboutMeQuestions[i])
         response = response.toLowerCase();
+        if (answersAboutMe[i].indexOf(response) > -1) {
             alert("Correct")
             count++;
-        } else{
+        } else {
             // console.log("Wrong")
             alert("Wrong")
         }
     }
 }
-function guessNumber(){
-    for(let i = 0; i < 4; i++){
+function guessNumber() {
+    for (let i = 0; i < 4; i++) {
         response = prompt("Guess a number between 1-10")
-        if(Number(response) === selectedNumber){
+        if (Number(response) === selectedNumber) {
             console.log("Your guess is correct")
             alert("Your guess is correct")
             count++;
             break;
-        } else if(response > selectedNumber && i < 3){
+        } else if (response > selectedNumber && i < 3) {
             // console.log("Wrong. Try again. Number of guesses left: " + (3 - i))
             alert("Wrong. Too high. Number of guesses left: " + (3 - i))
-        } else if(response < selectedNumber && i <3){
+        } else if (response < selectedNumber && i < 3) {
             // console.log("Wrong. Too low. Number of guesses left: " + (3-i))
-            alert("Wrong. Too low. Number of guesses left: " + (3-i))
-        } else{
+            alert("Wrong. Too low. Number of guesses left: " + (3 - i))
+        } else {
             // console.log("Wrong. You ran out of attempts. The correct answer is " + selectedNumber)
             alert("Wrong. You ran out of attempts. The correct answer is " + selectedNumber)
         }
     }
 }
-function seventhQuestion(){
-    for(let i = 0; i< 6; i++){
+function seventhQuestion() {
+    for (let i = 0; i < 6; i++) {
         response = prompt("What is one of my favorite games?")
         response = response.toLowerCase()
-        if(answers.indexOf(response) > -1){
+        if (answers.indexOf(response) > -1) {
             // console.log("Correct")
             alert("Correct")
             count++;
             break;
-        } else if (i < 5){
+        } else{
             // console.log("Wrong")
-            alert("Wrong. Number of attempts left: " + (5-i))
-        } 
+            alert("Wrong. Number of attempts left: " + (5 - i))
+        }
     }
     alert("All of these are correct answers: " + answers.join(", "))
-}
-    
 }
 // function seventhQuestion(){
 //     guesses = 0;
@@ -130,4 +129,3 @@ function seventhQuestion(){
 //     str += answers[answers.length-1]
 //     return str;
 // }
->>>>>>> f116d3d4304d7ad163905178994aec050968dbd2
