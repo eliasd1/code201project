@@ -3,10 +3,12 @@ const userName = prompt("Hello! What is your name?")
 var count = 0;
 var guesses = 0;
 var selectedNumber = 5;
+var answerYes = ["yes", "y"]
+var answerNo = ["no", "n"]
 var response;
 var answers = ["dota 2", "cs:go", "fallout 4", "call of duty"];
 var aboutMeQuestions = ["Is my name Elias?", "Am I older than 25?", "Is green my favorite color?", "Do I have a bachelor's degree in electrical engineering?", "Am I Jordanian?"];
-var answersAboutMe = ["yes", "no", "no", "yes", "yes"];
+var answersAboutMe = [answerYes, answerNo, answerNo, answerYes, answerYes];
 // console.log("Welcome to my website, " + userName);
 alert("Nice to meet you, " + userName)
 guessAboutMeGame();
@@ -20,10 +22,16 @@ function guessAboutMeGame(){
     for (let i = 0; i<aboutMeQuestions.length; i++){
         response = prompt(aboutMeQuestions[i])
         response = response.toLowerCase();
+<<<<<<< HEAD
+        if(answersAboutMe[i].indexOf(response) > -1){
+            // console.log("Correct")
+=======
         response = (response === "y" || response === "yes")? "yes" : "no";
         if(response === answersAboutMe[i]){
             console.log("Correct")
+>>>>>>> f116d3d4304d7ad163905178994aec050968dbd2
             alert("Correct")
+            count++;
         } else{
             // console.log("Wrong")
             alert("Wrong")
@@ -39,18 +47,27 @@ function guessNumber(){
             count++;
             break;
         } else if(response > selectedNumber && i < 3){
-            console.log("Wrong. Try again. Number of guesses left: " + (3 - i))
+            // console.log("Wrong. Try again. Number of guesses left: " + (3 - i))
             alert("Wrong. Too high. Number of guesses left: " + (3 - i))
         } else if(response < selectedNumber && i <3){
-            console.log("Wrong. Too low. Number of guesses left: " + (3-i))
+            // console.log("Wrong. Too low. Number of guesses left: " + (3-i))
             alert("Wrong. Too low. Number of guesses left: " + (3-i))
         } else{
-            console.log("Wrong. You ran out of attempts. The correct answer is " + selectedNumber)
+            // console.log("Wrong. You ran out of attempts. The correct answer is " + selectedNumber)
             alert("Wrong. You ran out of attempts. The correct answer is " + selectedNumber)
         }
     }
 }
 function seventhQuestion(){
+<<<<<<< HEAD
+    for(let i = 0; i< 6; i++){
+        response = prompt("What is one of my favorite games?")
+        response = response.toLowerCase()
+        if(answers.indexOf(response) > -1){
+            // console.log("Correct")
+            alert("Correct")
+            count++;
+=======
     guesses = 0;
     response = prompt("What is one of my favorite games?")
     response = response.toLowerCase();
@@ -66,16 +83,17 @@ function seventhQuestion(){
             }
         }
         if(!wrongResponse){
+>>>>>>> f116d3d4304d7ad163905178994aec050968dbd2
             break;
-        }
-        if(guesses < 6){
-            console.log("Wrong. Number of attempts left: " + (6 - guesses))
-            alert("Wrong. Number of attempts left: " + (6 - guesses))
-            response = prompt("What is one of my favorite games?")
-        } else{
-            alert("You ran out of attempts. Correct answers: " + joinAnswers())
-        }
+        } else if (i < 5){
+            // console.log("Wrong")
+            alert("Wrong. Number of attempts left: " + (5-i))
+        } 
     }
+<<<<<<< HEAD
+    alert("All of these are correct answers: " + answers.join(", "))
+}
+=======
     
 }
 // function seventhQuestion(){
@@ -140,3 +158,4 @@ function seventhQuestion(){
 //     str += answers[answers.length-1]
 //     return str;
 // }
+>>>>>>> f116d3d4304d7ad163905178994aec050968dbd2
